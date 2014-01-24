@@ -1,3 +1,0 @@
-[submodule "app/lib/angular2"]
-	path = app/lib/angular2
-	url = https://github.com/angular/angular.js.git
