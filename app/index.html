@@ -1,15 +1,14 @@
 <!doctype html>
-<html lang="en" data-ng-app="cctApp">
+<html lang="en" data-ng-app="wlhssbApp">
 <head>
   <meta charset="utf-8">
-  <title>Communication Tracker</title>
+  <title>West Linn HS Softball</title>
     <link rel="stylesheet" href="css/bootstrap.css"/>
   <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
 
-
-<div class="navbar navbar-default navbar-static-top">
+<div class="navbar navbar-default navbar-static-top span9">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -20,6 +19,10 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="#/schedule">Schedule</a></li>
+                <li class="active"><a href="#/calendar">Calendar</a></li>
+                <li class="active"><a href="#/roster">Roster</a></li>
+                <li class="active"><a href="#/news">News</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="#">Welcome!</a></li>
@@ -30,10 +33,10 @@
 
 <div class="container">
 
-  <div data-ng-view>
+<div data-ng-view>
 </div>
 
-  <div>West Linn HS Softball: v<span app-version></span></div>
+  <div>West Linn HS Softball: v<span data-app-version></span></div>
 </div>
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
@@ -46,7 +49,6 @@
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
-  <script src="js/ui-bootstrap-0.9.0.js"></script>
-  <script src="js/ui-bootstrap-tpls-0.9.0.min.js"></script>
+  <script src="js/ui-bootstrap-tpls-0.10.0.js"></script>
 </body>
 </html>

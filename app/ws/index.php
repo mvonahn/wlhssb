@@ -54,7 +54,7 @@ if (defined('ENVIRONMENT')) {
  * as this file.
  *
  */
-$system_path = '/home1/webfootd/www/sarah/ci/system';
+$system_path = '/home1/webfootd/www/westlinnsoftball/ci/system';
 
 /*
  *---------------------------------------------------------------
@@ -70,7 +70,7 @@ $system_path = '/home1/webfootd/www/sarah/ci/system';
  * NO TRAILING SLASH!
  *
  */
-$application_folder = '/home1/webfootd/www/sarah/ci/application';
+$application_folder = '/home1/webfootd/www/westlinnsoftball/ci/application';
 
 /*
  * --------------------------------------------------------------------

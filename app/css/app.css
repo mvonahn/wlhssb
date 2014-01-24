@@ -1,4 +1,7 @@
 /* app css stylesheet */
+body {
+    background: black url(/img/ball_field_background.jpg) no-repeat;
+}
 
 .menu {
   list-style: none;

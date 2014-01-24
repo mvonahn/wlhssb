@@ -1,0 +1,31 @@
+<div class="panel panel-success">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Game Schedule</div>
+    <div class="panel-body">
+        <p>Last updated Jan/24/2014</p>
+    </div>
+
+    <table class="table table-striped table-condensed table-bordered table-hover">
+        <thead>
+        <tr>
+            <th ng-click="changeSorting('date')" >Date</th>
+            <th class ="hidden-xs hidden-sm">Day</th>
+            <th ng-click="changeSorting('opponent')" >Opponent</th>
+            <th ng-click="changeSorting('level')" class ="hidden-xs hidden-sm">Level</th>
+            <th ng-click="changeSorting('location')" class ="hidden-xs hidden-sm">Location</th>
+            <th ng-click="changeSorting('lastContact.Type')" class ="hidden-xs">Time</th>
+        </tr>
+        </thead>
+        <tbody ng-repeat="game in games | orderBy:sort.column:sort.descending">
+        <tr>
+            <td>{{ game.date }}</td>
+            <td>{{ game.day }}</td>
+            <td>{{ game.opponent }}</td>
+            <td>{{ game.level }}</td>
+            <td>{{ game.location }}</td>
+            <td>{{ game.time }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
