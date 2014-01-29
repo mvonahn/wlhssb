@@ -5,4 +5,22 @@
         Table of players with filter and sorts
         maybe links to details
     </div>
+    <table class="table table-striped table-condensed table-bordered table-hover">
+        <thead>
+        <tr>
+            <th ng-click="changeSorting('name')" >Name</th>
+            <th class ="hidden-xs hidden-sm">Position</th>
+            <th ng-click="changeSorting('year')" >Year</th>
+            <th ng-click="changeSorting('team')" class ="hidden-xs hidden-sm">Team</th>
+        </tr>
+        </thead>
+        <tbody ng-repeat="player in roster | orderBy:sort.column:sort.descending">
+        <tr>
+            <td>{{ player.name }}</td>
+            <td>{{ player.position }}</td>
+            <td>{{ player.year }}</td>
+            <td>{{ player.team }}</td>
+        </tr>
+        </tbody>
+    </table>
 </div>

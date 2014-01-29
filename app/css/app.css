@@ -31,3 +31,38 @@ body {
   content: "";
   padding: 0;
 }
+
+.panel-success {
+    border-color: rgb(0,51,0);
+}
+
+.panel-success > .panel-heading {
+    background-color: rgb(0,51,0);
+    border-color: rgb(44, 50, 70);
+}
+
+.panel-success > .panel-heading + .panel-collapse .panel-body {
+    border-top-color: rgb(44, 50, 70);
+}
+
+.panel-success > .panel-footer + .panel-collapse .panel-body {
+    border-bottom-color: rgb(44, 50, 70);
+}
+
+.panel-warning {
+    border-color: #f05800;
+}
+
+.panel-warning > .panel-heading {
+    color: #000000;
+    background-color: rgb(255, 255, 204);
+    border-color: #ffcc00;
+}
+
+.panel-warning > .panel-heading + .panel-collapse .panel-body {
+    border-top-color: #ffcc00;
+}
+
+.panel-warning > .panel-footer + .panel-collapse .panel-body {
+    border-bottom-color: #ffcc00;
+}

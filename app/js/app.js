@@ -7,12 +7,13 @@ angular.module('wlhssbApp', [
   'wlhssbApp.services',
   'wlhssbApp.directives',
   'wlhssbApp.controllers',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ui.calendar'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'MyCtrl1'});
   $routeProvider.when('/schedule', {templateUrl: 'partials/schedule.html', controller: 'GameController'});
-  $routeProvider.when('/calendar', {templateUrl: 'partials/calendar.html', controller: 'MyCtrl1'});
+  $routeProvider.when('/calendar', {templateUrl: 'partials/calendar.html', controller: 'CalendarController'});
   $routeProvider.when('/roster', {templateUrl: 'partials/roster.html', controller: 'RosterController'});
   $routeProvider.when('/news', {templateUrl: 'partials/news.html', controller: 'MyCtrl1'});
   $routeProvider.otherwise({redirectTo: '/home'});

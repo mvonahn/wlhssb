@@ -13,7 +13,7 @@ class Game_model extends CI_Model
     public function __construct()
     {
         parent::__construct();
-        log_message('debug', 'CCT: Game Model loaded');
+        log_message('debug', 'WLHSSB: Game Model loaded');
     }
 
     /**
