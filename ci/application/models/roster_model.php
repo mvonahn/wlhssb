@@ -23,34 +23,34 @@ class Roster_model extends CI_Model
     {
  //       Seniors:
         $player[] = array(
-            'name'=> 'Brianna Barzola (Team Captain)', 'position'=> 'CF', 'year'=> '2013', 'team'=> 'Varsity');
+            'name'=> 'Brianna Barzola (Team Captain)', 'position'=> 'CF', 'year'=> '2013', 'team'=> 'Var');
         $player[] = array(
-            'name'=> 'Lenaya LeBlanc', 'position'=> '1B', 'year'=> '2013', 'team'=> 'Varsity');
+            'name'=> 'Lenaya LeBlanc', 'position'=> '1B', 'year'=> '2013', 'team'=> 'Var');
         $player[] = array(
-            'name'=> 'Katie Wells', 'position'=> '1B', 'year'=> '2013', 'team'=> 'Varsity');
+            'name'=> 'Katie Wells', 'position'=> '1B', 'year'=> '2013', 'team'=> 'Var');
 //        Juniors:
         $player[] = array(
-            'name'=> 'Halle Olmstead', 'position'=> '3B', 'year'=> '2014', 'team'=> 'Varsity');
+            'name'=> 'Halle Olmstead', 'position'=> '3B', 'year'=> '2014', 'team'=> 'Var');
         $player[] = array(
-            'name'=> 'Leah Beyer', 'position'=> 'SS', 'year'=> '2014', 'team'=> 'Varsity');
+            'name'=> 'Leah Beyer', 'position'=> 'SS', 'year'=> '2014', 'team'=> 'Var');
         $player[] = array(
-            'name'=> 'McKenzie Hartdegen', 'position'=> 'C', 'year'=> '2014', 'team'=> 'Varsity');
+            'name'=> 'McKenzie Hartdegen', 'position'=> 'C', 'year'=> '2014', 'team'=> 'Var');
         $player[] = array(
-            'name'=> 'MacKenzie Baker', 'position'=> 'P', 'year'=> '2014', 'team'=> 'Varsity');
+            'name'=> 'MacKenzie Baker', 'position'=> 'P', 'year'=> '2014', 'team'=> 'Var');
         $player[] = array(
-            'name'=> 'Danielle DelBene', 'position'=> 'C/OF', 'year'=> '2014', 'team'=> 'Varsity');
+            'name'=> 'Danielle DelBene', 'position'=> 'C/OF', 'year'=> '2014', 'team'=> 'Var');
         //       Sophomores:
         $player[] = array(
-            'name'=> 'Maddi Higgins', 'position'=> 'RF', 'year'=> '2015', 'team'=> 'Varsity');
+            'name'=> 'Maddi Higgins', 'position'=> 'RF', 'year'=> '2015', 'team'=> 'Var');
         $player[] = array(
-            'name'=> 'Caroline Frieling', 'position'=> 'C/1B', 'year'=> '2015', 'team'=> 'Varsity');
+            'name'=> 'Caroline Frieling', 'position'=> 'C/1B', 'year'=> '2015', 'team'=> 'Var');
         //       Freshmen:
         $player[] = array(
-            'name'=> 'Hannah Sicilliani', 'position'=> '2B', 'year'=> '2016', 'team'=> 'Varsity');
+            'name'=> 'Hannah Sicilliani', 'position'=> '2B', 'year'=> '2016', 'team'=> 'Var');
         $player[] = array(
-            'name'=> 'Sarah Von Ahn', 'position'=> 'P', 'year'=> '2016', 'team'=> 'Varsity');
+            'name'=> 'Sarah Von Ahn', 'position'=> 'P', 'year'=> '2016', 'team'=> 'Var');
         $player[] = array(
-            'name'=> 'Carly Savoy', 'position'=> 'OF', 'year'=> '2016', 'team'=> 'Varsity');
+            'name'=> 'Carly Savoy', 'position'=> 'OF', 'year'=> '2016', 'team'=> 'Var');
 
         //       2013 JV Roster
 //Juniors:

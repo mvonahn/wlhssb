@@ -16,5 +16,7 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/calendar', {templateUrl: 'partials/calendar.html', controller: 'CalendarController'});
   $routeProvider.when('/roster', {templateUrl: 'partials/roster.html', controller: 'RosterController'});
   $routeProvider.when('/news', {templateUrl: 'partials/news.html', controller: 'MyCtrl1'});
+  $routeProvider.when('/philosophy', {templateUrl: 'partials/philosophy.html', controller: 'MyCtrl1'});
+  $routeProvider.when('/team/:team', {templateUrl: 'partials/team.html', controller: 'MyCtrl1'});
   $routeProvider.otherwise({redirectTo: '/home'});
 }]);

@@ -86,33 +86,23 @@ angular.module('wlhssbApp.controllers', [])
         var m = date.getMonth();
         var y = date.getFullYear();
 
-        /* event source that contains custom events on the scope */
-        $scope.events = [
-            {title: 'All Day Event',start: new Date(y, m, 1)},
-            {title: 'Long Event',start: new Date(y, m, d - 5),end: new Date(y, m, d - 2)},
-            {id: 999,title: 'Repeating Event',start: new Date(y, m, d - 3, 16, 0),allDay: false},
-            {id: 999,title: 'Repeating Event',start: new Date(y, m, d + 4, 16, 0),allDay: false},
-            {title: 'Birthday Party',start: new Date(y, m, d + 1, 19, 0),end: new Date(y, m, d + 1, 22, 30),allDay: false},
-            {title: 'Click for Google',start: new Date(y, m, 28),end: new Date(y, m, 29),url: 'http://google.com/'}
-        ];
-        /* event source that calls a function on every view switch */
-        $scope.eventsF = function (start, end, callback) {
-            var s = new Date(start).getTime() / 1000;
-            var e = new Date(end).getTime() / 1000;
-            var m = new Date(start).getMonth();
-            var events = [{title: 'Feed Me ' + m,start: s + (50000),end: s + (100000),allDay: false, className: ['customFeed']}];
-            callback(events);
+
+        $scope.teamEvents = {
+            color: '#f05800',
+            textColor: 'black',
+            url:'/ws/events/team'
+        };
+        $scope.varsityEvents = {
+            color: '#ffcc00',
+            textColor: 'black',
+            url:'/ws/events/varsity'
+        };
+        $scope.jvEvents = {
+            color: '#222',
+            textColor: 'yellow',
+            url:'/ws/events/jv'
         };
 
-        $scope.calEventsExt = {
-            color: '#f00',
-            textColor: 'yellow',
-            events: [
-                {type:'party',title: 'Lunch',start: new Date(y, m, d, 12, 0),end: new Date(y, m, d, 14, 0),allDay: false},
-                {type:'party',title: 'Lunch 2',start: new Date(y, m, d, 12, 0),end: new Date(y, m, d, 14, 0),allDay: false},
-                {type:'party',title: 'Click for Google',start: new Date(y, m, 28),end: new Date(y, m, 29),url: 'http://google.com/'}
-            ]
-        };
         /* alert on eventClick */
         $scope.alertOnEventClick = function( event, allDay, jsEvent, view ){
             $scope.alertMessage = (event.title + ' was clicked ');
@@ -176,7 +166,13 @@ angular.module('wlhssbApp.controllers', [])
             }
         };
 
-
         /* event sources array*/
-        $scope.eventSources = [$scope.calEventsExt, $scope.eventsF, $scope.events];
-    });
+        $scope.eventSources = [$scope.teamEvents, $scope.jvEvents, $scope.varsityEvents];
+    })
+    .controller('NavController', function($scope, $location) {
+
+    $scope.isActive = function (viewLocation) {
+        alert($location.path());
+        return (viewLocation === $location.path());
+    };
+});

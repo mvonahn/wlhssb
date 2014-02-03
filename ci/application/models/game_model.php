@@ -238,6 +238,22 @@ class Game_model extends CI_Model
             'time' => '4:30 PM'
         );
         $game[] = array(
+            'date' => '3/27/2014',
+            'day' => 'Thurs',
+            'opponent' => 'North Medford HS',
+            'level' => 'Var',
+            'location' => 'North Medford HS',
+            'time' => '12:00 PM'
+        );
+        $game[] = array(
+            'date' => '3/27/2014',
+            'day' => 'Thurs',
+            'opponent' => 'North Medford HS',
+            'level' => 'Var',
+            'location' => 'North Medford HS',
+            'time' => '2:00 PM'
+        );
+        $game[] = array(
             'date' => '4/1/2014',
             'day' => 'Tues',
             'opponent' => 'Barlow HS',
