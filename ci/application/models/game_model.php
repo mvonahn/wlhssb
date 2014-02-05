@@ -19,9 +19,9 @@ class Game_model extends CI_Model
     /**
      * @return array
      */
-    public function getGames()
+    public function getGames($team = 'varsity')
     {
-        $game[] = array(
+        $jv[] = array(
             'date' => '3/17/2014',
             'day' => 'Mon',
             'opponent' => 'Putnam HS',
@@ -29,7 +29,7 @@ class Game_model extends CI_Model
             'location' => 'Rosemont Ridge MS',
             'time' => '4:15 PM'
         );
-        $game[] = array(
+        $jv[] = array(
             'date' => '3/20/2014',
             'day' => 'Thurs',
             'opponent' => 'Aloha HS',
@@ -37,7 +37,7 @@ class Game_model extends CI_Model
             'location' => 'Rosemont Ridge MS',
             'time' => '4:15 PM'
         );
-        $game[] = array(
+        $jv[] = array(
             'date' => '3/21/2014',
             'day' => 'Fri',
             'opponent' => 'Forest Grove HS',
@@ -45,7 +45,7 @@ class Game_model extends CI_Model
             'location' => 'Forest Grove HS',
             'time' => '4:30 PM'
         );
-        $game[] = array(
+        $jv[] = array(
             'date' => '4/1/2014',
             'day' => 'Tues',
             'opponent' => 'Barlow HS',
@@ -53,7 +53,7 @@ class Game_model extends CI_Model
             'location' => 'Rosemont Ridge MS',
             'time' => '4:15 PM'
         );
-        $game[] = array(
+        $jv[] = array(
             'date' => '4/2/2014',
             'day' => 'Weds',
             'opponent' => 'Liberty HS',
@@ -61,7 +61,7 @@ class Game_model extends CI_Model
             'location' => 'Rosemont Ridge MS',
             'time' => '4:15 PM'
         );
-        $game[] = array(
+        $jv[] = array(
             'date' => '4/4/2014',
             'day' => 'Fri',
             'opponent' => 'Southridge HS',
@@ -69,7 +69,7 @@ class Game_model extends CI_Model
             'location' => 'Southridge HS',
             'time' => '5:00 PM'
         );
-        $game[] = array(
+        $jv[] = array(
             'date' => '4/7/2014',
             'day' => 'Mon',
             'opponent' => 'Tualatin HS',
@@ -77,7 +77,7 @@ class Game_model extends CI_Model
             'location' => 'Rosemont Ridge MS',
             'time' => '4:15 PM'
         );
-        $game[] = array(
+        $jv[] = array(
             'date' => '4/9/2014',
             'day' => 'Weds',
             'opponent' => 'Wilsonville HS',
@@ -85,7 +85,7 @@ class Game_model extends CI_Model
             'location' => 'Wilsonville HS',
             'time' => '5:00 PM'
         );
-        $game[] = array(
+        $jv[] = array(
             'date' => '4/10/2014',
             'day' => 'Thurs',
             'opponent' => 'Beaverton HS',
@@ -93,7 +93,7 @@ class Game_model extends CI_Model
             'location' => 'Rosemont Ridge MS',
             'time' => '4:15 PM'
         );
-        $game[] = array(
+        $jv[] = array(
             'date' => '4/14/2014',
             'day' => 'Mon',
             'opponent' => 'Oregon City HS',
@@ -101,7 +101,7 @@ class Game_model extends CI_Model
             'location' => 'Oregon City HS',
             'time' => '5:00 PM'
         );
-        $game[] = array(
+        $jv[] = array(
             'date' => '4/16/2014',
             'day' => 'Weds',
             'opponent' => 'Canby HS',
@@ -109,7 +109,7 @@ class Game_model extends CI_Model
             'location' => 'Rosemont Ridge MS',
             'time' => '4:15 PM'
         );
-        $game[] = array(
+        $jv[] = array(
             'date' => '4/18/2014',
             'day' => 'Fri',
             'opponent' => 'Lake Oswego HS',
@@ -117,7 +117,7 @@ class Game_model extends CI_Model
             'location' => 'Lake Oswego',
             'time' => '5:00 PM'
         );
-        $game[] = array(
+        $jv[] = array(
             'date' => '4/21/2014',
             'day' => 'Mon',
             'opponent' => 'Clackamas HS',
@@ -125,7 +125,7 @@ class Game_model extends CI_Model
             'location' => 'Clackamas HS',
             'time' => '5:00 PM'
         );
-        $game[] = array(
+        $jv[] = array(
             'date' => '4/23/2014',
             'day' => 'Weds',
             'opponent' => 'Lakeridge HS',
@@ -133,7 +133,7 @@ class Game_model extends CI_Model
             'location' => 'Rosemont Ridge MS',
             'time' => '4:15 PM'
         );
-        $game[] = array(
+        $jv[] = array(
             'date' => '4/25/2014',
             'day' => 'Fri',
             'opponent' => 'Oregon City HS',
@@ -141,7 +141,7 @@ class Game_model extends CI_Model
             'location' => 'Rosemont Ridge MS',
             'time' => '4:15 PM'
         );
-        $game[] = array(
+        $jv[] = array(
             'date' => '4/28/2014',
             'day' => 'Mon',
             'opponent' => 'Canby HS',
@@ -149,7 +149,7 @@ class Game_model extends CI_Model
             'location' => 'Canby HS',
             'time' => '5:00 PM'
         );
-        $game[] = array(
+        $jv[] = array(
             'date' => '4/30/2014',
             'day' => 'Weds',
             'opponent' => 'Lake Oswego HS',
@@ -157,7 +157,7 @@ class Game_model extends CI_Model
             'location' => 'Lake Oswego HS',
             'time' => '4:15 PM'
         );
-        $game[] = array(
+        $jv[] = array(
             'date' => '5/2/2014',
             'day' => 'Fri',
             'opponent' => 'Clackamas HS',
@@ -165,7 +165,7 @@ class Game_model extends CI_Model
             'location' => 'Rosemont Ridge MS',
             'time' => '4:15 PM'
         );
-        $game[] = array(
+        $jv[] = array(
             'date' => '5/5/2014',
             'day' => 'Mon',
             'opponent' => 'Lakeridge HS',
@@ -173,7 +173,7 @@ class Game_model extends CI_Model
             'location' => 'Lake Oswego Jr High',
             'time' => '4:30 PM'
         );
-        $game[] = array(
+        $jv[] = array(
             'date' => '5/7/2014',
             'day' => 'Weds',
             'opponent' => 'Oregon City HS',
@@ -181,7 +181,7 @@ class Game_model extends CI_Model
             'location' => 'Oregon City HS',
             'time' => '5:00 PM'
         );
-        $game[] = array(
+        $jv[] = array(
             'date' => '5/9/2014',
             'day' => 'Fri',
             'opponent' => 'Canby HS',
@@ -189,7 +189,7 @@ class Game_model extends CI_Model
             'location' => 'Rosemont Ridge MS',
             'time' => '4:15 PM'
         );
-        $game[] = array(
+        $jv[] = array(
             'date' => '5/12/2014',
             'day' => 'Mon',
             'opponent' => 'Lake Oswego',
@@ -197,7 +197,7 @@ class Game_model extends CI_Model
             'location' => 'Lake Oswego',
             'time' => '5:00 5:00'
         );
-        $game[] = array(
+        $jv[] = array(
             'date' => '5/14/2014',
             'day' => 'Weds',
             'opponent' => 'Clackamas HS',
@@ -205,7 +205,7 @@ class Game_model extends CI_Model
             'location' => 'Clackamas HS',
             'time' => '5:00 PM'
         );
-        $game[] = array(
+        $jv[] = array(
             'date' => '5/16/2014',
             'day' => 'Fri',
             'opponent' => 'Lakeridge HS',
@@ -213,7 +213,7 @@ class Game_model extends CI_Model
             'location' => 'Rosemont Ridge MS',
             'time' => '4:15 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '3/17/2014',
             'day' => 'Mon',
             'opponent' => 'Putnam HS',
@@ -221,7 +221,7 @@ class Game_model extends CI_Model
             'location' => 'Rosemont Ridge MS',
             'time' => '6:30 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '3/20/2014',
             'day' => 'Thurs',
             'opponent' => 'Aloha HS',
@@ -229,7 +229,7 @@ class Game_model extends CI_Model
             'location' => 'Rosemont Ridge MS',
             'time' => '6:30 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '3/21/2014',
             'day' => 'Fri',
             'opponent' => 'Forest Grove HS',
@@ -237,7 +237,7 @@ class Game_model extends CI_Model
             'location' => 'Forest Grove HS',
             'time' => '4:30 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '3/27/2014',
             'day' => 'Thurs',
             'opponent' => 'North Medford HS',
@@ -245,7 +245,7 @@ class Game_model extends CI_Model
             'location' => 'North Medford HS',
             'time' => '12:00 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '3/27/2014',
             'day' => 'Thurs',
             'opponent' => 'North Medford HS',
@@ -253,7 +253,7 @@ class Game_model extends CI_Model
             'location' => 'North Medford HS',
             'time' => '2:00 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '4/1/2014',
             'day' => 'Tues',
             'opponent' => 'Barlow HS',
@@ -261,7 +261,7 @@ class Game_model extends CI_Model
             'location' => 'Rosemont Ridge MS',
             'time' => '6:30 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '4/2/2014',
             'day' => 'Weds',
             'opponent' => 'Liberty HS',
@@ -269,7 +269,7 @@ class Game_model extends CI_Model
             'location' => 'Rosemont Ridge MS',
             'time' => '6:30 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '4/4/2014',
             'day' => 'Fri',
             'opponent' => 'Southridge HS',
@@ -277,7 +277,7 @@ class Game_model extends CI_Model
             'location' => 'Southridge HS',
             'time' => '5:00 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '4/7/2014',
             'day' => 'Mon',
             'opponent' => 'Tualatin HS',
@@ -285,7 +285,7 @@ class Game_model extends CI_Model
             'location' => 'Rosemont Ridge MS',
             'time' => '6:30 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '4/9/2014',
             'day' => 'Weds',
             'opponent' => 'Wilsonville HS',
@@ -293,7 +293,7 @@ class Game_model extends CI_Model
             'location' => 'Wilsonville HS',
             'time' => '5:00 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '4/10/2014',
             'day' => 'Thurs',
             'opponent' => 'Beaverton HS',
@@ -301,7 +301,7 @@ class Game_model extends CI_Model
             'location' => 'Rosemont Ridge MS',
             'time' => '6:30 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '4/14/2014',
             'day' => 'Mon',
             'opponent' => 'Oregon City HS',
@@ -309,7 +309,7 @@ class Game_model extends CI_Model
             'location' => 'Oregon City HS',
             'time' => '5:00 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '4/16/2014',
             'day' => 'Weds',
             'opponent' => 'Canby HS',
@@ -317,7 +317,7 @@ class Game_model extends CI_Model
             'location' => 'Rosemont Ridge MS',
             'time' => '6:30 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '4/18/2014',
             'day' => 'Fri',
             'opponent' => 'Lake Oswego HS',
@@ -325,7 +325,7 @@ class Game_model extends CI_Model
             'location' => 'Lake Oswego',
             'time' => '5:00 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '4/21/2014',
             'day' => 'Mon',
             'opponent' => 'Clackamas HS',
@@ -333,7 +333,7 @@ class Game_model extends CI_Model
             'location' => 'Clackamas HS',
             'time' => '5:00 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '4/23/2014',
             'day' => 'Weds',
             'opponent' => 'Lakeridge HS',
@@ -341,7 +341,7 @@ class Game_model extends CI_Model
             'location' => 'Rosemont Ridge MS',
             'time' => '6:30 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '4/25/2014',
             'day' => 'Fri',
             'opponent' => 'Oregon City HS',
@@ -349,7 +349,7 @@ class Game_model extends CI_Model
             'location' => 'Rosemont Ridge MS',
             'time' => '6:30 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '4/28/2014',
             'day' => 'Mon',
             'opponent' => 'Canby HS',
@@ -357,7 +357,7 @@ class Game_model extends CI_Model
             'location' => 'Canby HS',
             'time' => '5:00 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '4/30/2014',
             'day' => 'Weds',
             'opponent' => 'Lake Oswego HS',
@@ -365,7 +365,7 @@ class Game_model extends CI_Model
             'location' => 'Lake Oswego HS',
             'time' => '6:30 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '5/2/2014',
             'day' => 'Fri',
             'opponent' => 'Clackamas HS',
@@ -373,7 +373,7 @@ class Game_model extends CI_Model
             'location' => 'Rosemont Ridge MS',
             'time' => '6:30 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '5/5/2014',
             'day' => 'Mon',
             'opponent' => 'Lakeridge HS',
@@ -381,7 +381,7 @@ class Game_model extends CI_Model
             'location' => 'Lakeridge HS',
             'time' => '6:00 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '5/7/2014',
             'day' => 'Weds',
             'opponent' => 'Oregon City HS',
@@ -389,7 +389,7 @@ class Game_model extends CI_Model
             'location' => 'Oregon City HS',
             'time' => '5:00 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '5/9/2014',
             'day' => 'Fri',
             'opponent' => 'Canby HS',
@@ -397,7 +397,7 @@ class Game_model extends CI_Model
             'location' => 'Rosemont Ridge MS',
             'time' => '6:30 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '5/12/2014',
             'day' => 'Mon',
             'opponent' => 'Lake Oswego',
@@ -405,7 +405,7 @@ class Game_model extends CI_Model
             'location' => 'Lake Oswego',
             'time' => '5:00 5:00'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '5/14/2014',
             'day' => 'Weds',
             'opponent' => 'Clackamas HS',
@@ -413,7 +413,7 @@ class Game_model extends CI_Model
             'location' => 'Clackamas HS',
             'time' => '5:00 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '5/16/2014',
             'day' => 'Fri',
             'opponent' => 'Lakeridge HS',
@@ -421,7 +421,7 @@ class Game_model extends CI_Model
             'location' => 'Rosemont Ridge MS',
             'time' => '6:30 PM'
         );
-        $game[] = array(
+        $varsity[] = array(
             'date' => '5/20/2014',
             'day' => 'Tues',
             'opponent' => 'Play in Game',
@@ -429,6 +429,6 @@ class Game_model extends CI_Model
             'location' => 'TBA',
             'time' => 'TBA TBA'
         );
-        return $game;
+        return $$team;
     }
 }

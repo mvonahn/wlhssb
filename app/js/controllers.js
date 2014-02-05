@@ -5,6 +5,7 @@
 angular.module('wlhssbApp.controllers', [])
     .controller('MyCtrl1', function($scope, $http, $modal, $log) {
 
+        console.log('Main Controller');
     $scope.convertToUTC = function(dt) {
         var localDate = new Date(dt);
         var localTime = localDate.getTime();
@@ -30,10 +31,10 @@ angular.module('wlhssbApp.controllers', [])
         'show-weeks' : false
     };
 
-  })
-    .controller('RosterController', function($scope, $http, $modal, $log) {
+    })
+    .controller('RosterController', function($scope, $http, $modal, $log, $routeParams) {
 
-        $http.get('/ws/roster').success(function(response) {
+        $http.get('/ws/roster/' + $routeParams.team ).success(function(response) {
             $scope.roster = response;
         });
 
@@ -53,9 +54,9 @@ angular.module('wlhssbApp.controllers', [])
             }
         };
     })
-    .controller('GameController', function($scope, $http, $modal, $log) {
+    .controller('GameController', function($scope, $http, $modal, $routeParams) {
 
-        $http.get('/ws/game').success(function(response) {
+        $http.get('/ws/game/' + $routeParams.team ).success(function(response) {
             $scope.games = response;
         });
 
@@ -81,6 +82,7 @@ angular.module('wlhssbApp.controllers', [])
             $scope.events = response;
         });
 */
+        console.log('Calendar');
         var date = new Date();
         var d = date.getDate();
         var m = date.getMonth();
@@ -171,8 +173,28 @@ angular.module('wlhssbApp.controllers', [])
     })
     .controller('NavController', function($scope, $location) {
 
-    $scope.isActive = function (viewLocation) {
-        alert($location.path());
-        return (viewLocation === $location.path());
-    };
-});
+        $scope.isActive = function (viewLocation) {
+            return (viewLocation === $location.path());
+        };
+    })
+    .controller('TeamController', function($scope, $location, $http, $routeParams) {
+        console.log('TeamController');
+        $http.get('/ws/team/' + $routeParams.team ).success(function(response) {
+            $scope.team = response;
+        });
+    })
+    .controller('MediaController', function($scope, $location, $routeParams) {
+        console.log('Media Controller');
+        $scope.team =  $routeParams.team;
+
+        $scope.myInterval = 5000;
+        var slides = $scope.slides = [];
+        $scope.addSlide = function(index) {
+            slides.push({
+                image: '/files/fallCamp2013/thumbnails/' + index + '.jpg'
+            });
+        };
+        for (var i=1; i<62; i++) {
+            $scope.addSlide(i);
+        }
+    });

@@ -12,11 +12,10 @@ angular.module('wlhssbApp', [
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'MyCtrl1'});
-  $routeProvider.when('/schedule', {templateUrl: 'partials/schedule.html', controller: 'GameController'});
   $routeProvider.when('/calendar', {templateUrl: 'partials/calendar.html', controller: 'CalendarController'});
-  $routeProvider.when('/roster', {templateUrl: 'partials/roster.html', controller: 'RosterController'});
   $routeProvider.when('/news', {templateUrl: 'partials/news.html', controller: 'MyCtrl1'});
   $routeProvider.when('/philosophy', {templateUrl: 'partials/philosophy.html', controller: 'MyCtrl1'});
-  $routeProvider.when('/team/:team', {templateUrl: 'partials/team.html', controller: 'MyCtrl1'});
+  $routeProvider.when('/media', {templateUrl: 'partials/images.html', controller: 'MediaController'});
+  $routeProvider.when('/team/:team', {templateUrl: 'partials/team.html', controller: 'TeamController'});
   $routeProvider.otherwise({redirectTo: '/home'});
 }]);

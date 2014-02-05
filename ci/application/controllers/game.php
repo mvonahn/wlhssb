@@ -11,12 +11,22 @@ require_once('/home1/webfootd/www/westlinnsoftball/ci/application/libraries/REST
  */
 class Game extends REST_Controller
 {
-    public function index_get()
+    public function index_get($team)
     {
         $this->load->model('Game_model', '', true);
 
-        $games = $this->Game_model->getGames();
+        $games = $this->Game_model->getGames($team);
 
         $this->response($games);
+    }
+
+    public function varsity_get()
+    {
+        $this->index_get('varsity');
+    }
+
+    public function jv_get()
+    {
+        $this->index_get('jv');
     }
 }

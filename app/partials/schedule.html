@@ -13,13 +13,13 @@
             <th ng-click="changeSorting('opponent')" >Opponent</th>
             <th ng-click="changeSorting('level')" class ="hidden-xs hidden-sm">Team</th>
             <th ng-click="changeSorting('location')" class ="hidden-xs hidden-sm">Location</th>
-            <th ng-click="changeSorting('lastContact.Type')" class ="hidden-xs">Time</th>
+            <th ng-click="changeSorting('time')" class ="hidden-xs">Time</th>
         </tr>
         </thead>
         <tbody ng-repeat="game in games | orderBy:sort.column:sort.descending">
         <tr>
             <td>{{ game.date }}</td>
-            <td>{{ game.day }}</td>
+            <td class ="hidden-xs hidden-sm">{{ game.day }}</td>
             <td>{{ game.opponent }}</td>
             <td>{{ game.level }}</td>
             <td>{{ game.location }}</td>

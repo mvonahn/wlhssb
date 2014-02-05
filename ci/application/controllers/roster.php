@@ -11,12 +11,22 @@ require_once('/home1/webfootd/www/westlinnsoftball/ci/application/libraries/REST
  */
 class Roster extends REST_Controller
 {
-    public function index_get()
+    public function index_get($team)
     {
         $this->load->model('Roster_model', '', true);
 
-        $roster = $this->Roster_model->getRoster();
+        $roster = $this->Roster_model->getRoster($team);
 
         $this->response($roster);
+    }
+
+    public function varsity_get()
+    {
+        $this->index_get('varsity');
+    }
+
+    public function jv_get()
+    {
+        $this->index_get('jv');
     }
 }

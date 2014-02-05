@@ -31,13 +31,6 @@ class events extends REST_Controller
         );
         $events[] = array(
             'id' => 99,
-            'title' => 'Contidioning',
-            'start' => '2014-02-05T15:30',
-            'end' => '2014-02-05T16:30',
-            'allDay' => false
-        );
-        $events[] = array(
-            'id' => 99,
             'title' => 'Spring Sports Clearance',
             'start' => '2014-02-05T15:30',
             'end' => '2014-02-05T16:00',
@@ -125,13 +118,11 @@ class events extends REST_Controller
 
         $this->load->model('Game_model', '', true);
 
-        $games = $this->Game_model->getGames();
+        $games = $this->Game_model->getGames('jv');
         $events = array();
 
         foreach ($games as $game) {
-            if ($game['level'] == 'JV') {
-                $events[] = $this->buildEvent($game);
-            }
+            $events[] = $this->buildEventFromGame($game);
         }
         $this->response($events);
     }
@@ -141,18 +132,16 @@ class events extends REST_Controller
 
         $this->load->model('Game_model', '', true);
 
-        $games = $this->Game_model->getGames();
+        $games = $this->Game_model->getGames('varsity');
         $events = array();
 
         foreach ($games as $game) {
-            if ($game['level'] == 'Var') {
-                $events[] = $this->buildEvent($game);
-            }
+            $events[] = $this->buildEventFromGame($game);
         }
         $this->response($events);
     }
 
-    private function buildEvent($game)
+    private function buildEventFromGame($game)
     {
         $title = ($game['location'] == 'Rosemont Ridge MS') ?
             'vs ' . $game['opponent'] : '@' . $game['opponent'];
@@ -174,6 +163,7 @@ class events extends REST_Controller
         }
 
         return  array(
+            'type' => 'game',
             'title' => $title,
             'start' => $start,
             'allDay' => $allDay

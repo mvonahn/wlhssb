@@ -8,28 +8,29 @@
 </head>
 <body>
 
-<div class="navbar navbar-default navbar-static-top span9" data-ng-controller="NavController">
+<nav class="navbar navbar-default navbar-static-top" role="navigation" data-ng-controller="NavController">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">West Linn High School Softball</a>
         </div>
-        <div class="navbar-collapse collapse">
+        <div class="navbar-collapse collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
                 <li ng-class="{ active: isActive('/home')}"><a href="#">Home</a></li>
                 <li ng-class="{ active: isActive('/calendar')}"><a href="#/calendar">Calendar</a></li>
-                <li class="dropdown">
+                <li class="dropdown" ng-class="{ active: isActive('/team/jv') || isActive('/team/varsity') }">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Teams <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="#/team/jv">JV</a></li>
                         <li><a href="#/team/varsity">Varsity</a></li>
                     </ul>
                 </li>
-  <!--              <li ng-class="{ active: isActive('/roster')}"><a href="#/roster">Roster</a></li>
-                <li ng-class="{ active: isActive('/schedule')}"><a href="#/schedule">Schedule</a></li> -->
-                <li ng-class="{ active: isActive('/news')}"><a href="#/news">News</a></li>
+                <li ng-class="{ active: isActive('/media')}"><a href="#/media">Photos</a></li>
                 <li ng-class="{ active: isActive('/philosophy')}"><a href="#/philosophy">Coaching Philosophy</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -37,21 +38,58 @@
             </ul>
         </div><!--/.nav-collapse -->
     </div>
-</div>
+</nav>
 
 <div class="container">
-<div data-ng-view class="span9">
-</div>
+    <div class="row">
+        <div class="col-lg-9">
+            <div data-ng-view></div>
+        </div>
+        <div class="col-lg-3">
 
+            <div class="panel panel-success">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Flash Store</div>
+                <div class="panel-body">
+                    <p>Flash store coming soon!</p>
+                </div>
+            </div>
 
+            <div class="panel panel-success">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Upcoming Events</div>
+                <div class="panel-body">
+                    <ul>
+                        <li>Tuesday, February 5, 2014 - Spring Sports Clearance</li>
+                        <li>Tuesday, February 6, 2014 - Kick Boxing</li>
+                        <li>Tuesday, February 11, 2014 - Conditioning</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">Images</div>
+                <div class="panel-body" >
+                    <div ng-controller="MediaController">
+                        <carousel interval="myInterval">
+                            <slide ng-repeat="slide in slides" active="slide.active">
+                                <img ng-src="{{slide.image}}" style="margin:auto;">
+                            </slide>
+                        </carousel>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
   <div>West Linn HS Softball: v<span data-app-version></span></div>
 </div>
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
   -->
 <script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
 <script type="text/javascript" src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
-<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.js"></script>
 <script type="text/javascript" src="bower_components/angular-ui-calendar/src/calendar.js"></script>
 <script type="text/javascript" src="bower_components/fullcalendar/fullcalendar.js"></script>
 <script type="text/javascript" src="bower_components/fullcalendar/gcal.js"></script>

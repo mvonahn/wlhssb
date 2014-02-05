@@ -66,3 +66,7 @@ body {
 .panel-warning > .panel-footer + .panel-collapse .panel-body {
     border-bottom-color: #ffcc00;
 }
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    background-color: rgb(0,51,0);
+}
