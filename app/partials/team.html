@@ -4,7 +4,7 @@
     <div class="panel-body">
         <div class="row">
             <div class = "col-lg-4">
-                Coaches: {{team.coaches.Head}}
+                Head Coach: {{team.coaches.Head}}
             </div>
             <div class = "col-lg-4">
                 Wins: {{team.wins}}
@@ -12,7 +12,7 @@
             <div class = "col-lg-4">
                 Losses: {{team.losses}}
             </div>
-        </div>
+        </div><br />
         <div class="row">
             <tabset>
                 <tab>
@@ -47,7 +47,7 @@
                             <th class ="hidden-xs hidden-sm">Day</th>
                             <th ng-click="changeSorting('opponent')" >Opponent</th>
                             <th ng-click="changeSorting('location')" class ="hidden-xs hidden-sm">Location</th>
-                            <th ng-click="changeSorting('lastContact.Type')" class ="hidden-xs">Time</th>
+                            <th ng-click="changeSorting('time')" class ="hidden-xs">Time</th>
                         </tr>
                         </thead>
                         <tbody ng-repeat="game in games | orderBy:sort.column:sort.descending">
