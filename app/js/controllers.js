@@ -6,6 +6,11 @@ angular.module('wlhssbApp.controllers', [])
     .controller('MyCtrl1', function($scope, $http, $modal, $log) {
 
         console.log('Main Controller');
+
+    $http.get('/ws/post/' ).success(function(response) {
+        $scope.posts = response;
+    });
+
     $scope.convertToUTC = function(dt) {
         var localDate = new Date(dt);
         var localTime = localDate.getTime();
