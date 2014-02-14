@@ -4,9 +4,8 @@
     <div class="panel-body"  ng-repeat="post in posts | orderBy:-post.Date">
         <div class="panel panel-warning panel-collapse">
             <div class="panel-heading">{{post.Title}}
-                <span class = "pull-right">{{post.Date}}</span></div>
-            <div class="panel-body">
-                {{post.Content}}
+                <span class = "pull-right">{{convertToUTC(post.Date) | date:'fullDate'}}</span></div>
+            <div class="panel-body" ng-bind-html="post.Content">
             </div>
         </div>
     </div>

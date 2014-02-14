@@ -8,7 +8,8 @@ angular.module('wlhssbApp', [
   'wlhssbApp.directives',
   'wlhssbApp.controllers',
   'ui.bootstrap',
-  'ui.calendar'
+  'ui.calendar',
+  'ngSanitize'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'MyCtrl1'});
