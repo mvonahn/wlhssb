@@ -2,3 +2,4 @@
 *.lock
 *.phar
 *~
+ci/application/config/database.php

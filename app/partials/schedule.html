@@ -18,7 +18,7 @@
         </thead>
         <tbody ng-repeat="game in games | orderBy:sort.column:sort.descending">
         <tr>
-            <td>{{ game.date }}</td>
+            <td>{{ toDate(game.date) | date:'shortDate'}}xx</td>
             <td class ="hidden-xs hidden-sm">{{ game.day }}</td>
             <td>{{ game.opponent }}</td>
             <td>{{ game.level }}</td>

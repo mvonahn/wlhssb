@@ -52,11 +52,11 @@
                         </thead>
                         <tbody ng-repeat="game in games | orderBy:sort.column:sort.descending">
                         <tr>
-                            <td>{{ game.date }}</td>
-                            <td>{{ game.day }}</td>
+                            <td>{{ toDate(game.date) | date:'mediumDate'}}</td>
+                            <td>{{ toDate(game.date) | date:'EEE'}}</td>
                             <td>{{ game.opponent }}</td>
                             <td>{{ game.location }}</td>
-                            <td>{{ game.time }}</td>
+                            <td>{{ toDate(game.date) | date:'shortTime'}}</td>
                         </tr>
                         </tbody>
                     </table>

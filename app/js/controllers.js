@@ -65,6 +65,10 @@ angular.module('wlhssbApp.controllers', [])
             $scope.games = response;
         });
 
+        $scope.toDate = function(dt) {
+            return Date.parse(dt);
+        };
+
         $scope.sort = {
             column: 'date',
             descending: false
@@ -183,13 +187,11 @@ angular.module('wlhssbApp.controllers', [])
         };
     })
     .controller('TeamController', function($scope, $location, $http, $routeParams) {
-        console.log('TeamController');
         $http.get('/ws/team/' + $routeParams.team ).success(function(response) {
             $scope.team = response;
         });
     })
     .controller('MediaController', function($scope, $location, $routeParams) {
-        console.log('Media Controller');
         $scope.team =  $routeParams.team;
 
         $scope.myInterval = 5000;

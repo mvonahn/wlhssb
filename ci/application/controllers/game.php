@@ -22,11 +22,11 @@ class Game extends REST_Controller
 
     public function varsity_get()
     {
-        $this->index_get('varsity');
+        $this->index_get('Varsity');
     }
 
     public function jv_get()
     {
-        $this->index_get('jv');
+        $this->index_get('JV');
     }
 }

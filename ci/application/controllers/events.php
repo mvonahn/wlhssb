@@ -118,7 +118,7 @@ class events extends REST_Controller
 
         $this->load->model('Game_model', '', true);
 
-        $games = $this->Game_model->getGames('jv');
+        $games = $this->Game_model->getGames('JV');
         $events = array();
 
         foreach ($games as $game) {
@@ -132,7 +132,7 @@ class events extends REST_Controller
 
         $this->load->model('Game_model', '', true);
 
-        $games = $this->Game_model->getGames('varsity');
+        $games = $this->Game_model->getGames('Varsity');
         $events = array();
 
         foreach ($games as $game) {
@@ -146,21 +146,8 @@ class events extends REST_Controller
         $title = ($game['location'] == 'Rosemont Ridge MS') ?
             'vs ' . $game['opponent'] : '@' . $game['opponent'];
 
-        list($month, $day, $year) = explode('/', $game['date']);
-        $day = ($day>9)? $day : '0' . $day;
-        $month = ($month>9)? $month : '0' . $month;
-        list($time, $indicator) = explode(' ', $game['time']);
-        if ($time != 'TBA') {
-            list($hour, $min) = explode(':', $time);
-            if ($indicator == 'PM' && $hour != 12) {
-                $hour += 12;
-            }
-            $start = $year . '-' . $month . '-' . $day . 'T'. $hour . ':' . $min;
-            $allDay = false;
-        } else {
-            $start = $year . '-' . $month . '-' . $day;
-            $allDay = true;
-        }
+        $start = $game['date'];
+        $allDay = false;
 
         return  array(
             'type' => 'game',
