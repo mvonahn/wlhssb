@@ -19,6 +19,8 @@ class Post_model extends CI_Model
 
     public function getPosts($limit = 5, $offset = 0)
     {
+        if($_SERVER['HTTP_HOST'] == 'westlinnsoftball.webfootdesigns.com')
+        {
         $post = array (
             array(
                     'Id' => '1',
@@ -65,13 +67,14 @@ class Post_model extends CI_Model
         );
 
         return $post;
-
-
+        }
+        $post = array();
         $sql = 'Select * from Post order by Date Desc limit ' . $offset . ', ' . $limit;
         $query = $this->db->query($sql);
         foreach ($query->result() as $row) {
             $post[] = $row;
         }
+        return $post;
     }
 
     /**
