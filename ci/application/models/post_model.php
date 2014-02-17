@@ -16,7 +16,6 @@ class Post_model extends CI_Model
         log_message('debug', 'CLUBHOUSE: Post Model loaded');
     }
 
-
     public function getPosts($limit = 5, $offset = 0)
     {
         $post = array();

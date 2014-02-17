@@ -17,6 +17,7 @@ class Roster_model extends CI_Model
     }
 
     /**
+     * @param $team
      * @return array
      */
     public function getRoster($team)
@@ -80,7 +81,6 @@ class Roster_model extends CI_Model
             'name'=> 'Aubrey Kreamer', 'position'=> '1B/OF', 'year'=> '2016', 'team'=> 'jv');
         $jv[] = array(
             'name'=> 'Brittany Park', 'position'=> 'INF', 'year'=> '2016', 'team'=> 'jv');
-
 
         //jv2
         $jv2[] = array(
