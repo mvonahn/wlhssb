@@ -44,7 +44,7 @@ angular.module('wlhssbApp.controllers', [])
         });
 
         $scope.sort = {
-            column: 'name',
+            column: 'LastName',
             descending: false
         };
 
@@ -190,6 +190,15 @@ angular.module('wlhssbApp.controllers', [])
         $http.get('/ws/team/' + $routeParams.team ).success(function(response) {
             $scope.team = response;
         });
+    })
+    .controller('UpcomingEventController', function($scope, $location, $http, $routeParams) {
+        $http.get('/ws/events/upcoming').success(function(response) {
+            $scope.upcomingEvents = response;
+        });
+
+        $scope.toDate = function(dt) {
+            return Date.parse(dt);
+        };
     })
     .controller('MediaController', function($scope, $location, $routeParams) {
         $scope.team =  $routeParams.team;

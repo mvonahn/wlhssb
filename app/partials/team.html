@@ -21,15 +21,16 @@
                     </tab-heading>
                     <table class="table table-striped table-condensed table-bordered table-hover" data-ng-controller="RosterController">
                         <thead>
-                        <tr>
-                            <th ng-click="changeSorting('name')" >Name</th>
+                        <tr><th ng-click="changeSorting('Number')">#</th>
+                            <th ng-click="changeSorting('LastName')" >Name</th>
                             <th class ="hidden-xs hidden-sm">Position</th>
                             <th ng-click="changeSorting('year')" >Year</th>
                         </tr>
                         </thead>
                         <tbody ng-repeat="player in roster | orderBy:sort.column:sort.descending">
                         <tr>
-                            <td>{{ player.name }}</td>
+                            <td>{{ player.Number }}</td>
+                            <td>{{ player.FirstName }} {{ player.LastName }}</td>
                             <td>{{ player.position }}</td>
                             <td>{{ player.year }}</td>
                         </tr>

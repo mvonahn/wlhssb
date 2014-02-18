@@ -58,11 +58,9 @@
             <div class="panel panel-success">
                 <!-- Default panel contents -->
                 <div class="panel-heading">Upcoming Events</div>
-                <div class="panel-body">
-                    <ul>
-                        <li>Tuesday, February 5, 2014 - Spring Sports Clearance</li>
-                        <li>Tuesday, February 6, 2014 - Kick Boxing</li>
-                        <li>Tuesday, February 11, 2014 - Conditioning</li>
+                <div class="panel-body" data-ng-controller="UpcomingEventController">
+                    <ul ng-repeat="event in upcomingEvents">
+                        <li>{{toDate(event.date) | date : 'EEE MMM dd h:mm a'}}<br />{{event.title}}</li>
                     </ul>
                 </div>
             </div>

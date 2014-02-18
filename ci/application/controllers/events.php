@@ -20,96 +20,21 @@ class events extends REST_Controller
         $this->response($events);
     }
 
+    public function upcoming_get()
+    {
+        $this->load->model('Event_model', '', true);
+
+        $events = $this->Event_model->getUpcomingEvents();
+
+        $this->response($events);
+    }
+
     public function team_get()
     {
-        $events[] = array(
-            'id' => 99,
-            'title' => 'Contidioning',
-            'start' => '2014-02-04T15:30',
-            'end' => '2014-02-04T16:30',
-            'allDay' => false
-        );
-        $events[] = array(
-            'id' => 99,
-            'title' => 'Spring Sports Clearance',
-            'start' => '2014-02-05T15:30',
-            'end' => '2014-02-05T16:00',
-            'allDay' => false,
-            'color' => 'red'
-        );
-        $events[] = array(
-            'id' => 99,
-            'title' => 'Kick Boxing',
-            'start' => '2014-02-06T15:30',
-            'end' => '2014-02-06T16:30',
-            'allDay' => false
-        );
+        $this->load->model('Event_model', '', true);
 
-        $events[] = array(
-            'id' => 99,
-            'title' => 'Contidioning',
-            'start' => '2014-02-11T15:30',
-            'end' => '2014-02-11T16:30',
-            'allDay' => false
-        );
-        $events[] = array(
-            'id' => 99,
-            'title' => 'Contidioning',
-            'start' => '2014-02-12T15:30',
-            'end' => '2014-02-12T16:30',
-            'allDay' => false
-        );
-        $events[] = array(
-            'id' => 99,
-            'title' => 'Kick Boxing',
-            'start' => '2014-02-13T15:30',
-            'end' => '2014-02-13T16:30',
-            'allDay' => false
-        );
+        $events = $this->Event_model->getEvents($this->get('start'), $this->get('end'));
 
-        $events[] = array(
-            'id' => 99,
-            'title' => 'Contidioning',
-            'start' => '2014-02-18T15:30',
-            'end' => '2014-02-18T16:30',
-            'allDay' => false
-        );
-        $events[] = array(
-            'id' => 99,
-            'title' => 'Contidioning',
-            'start' => '2014-02-19T15:30',
-            'end' => '2014-02-19T16:30',
-            'allDay' => false
-        );
-        $events[] = array(
-            'id' => 99,
-            'title' => 'Kick Boxing',
-            'start' => '2014-02-20T15:30',
-            'end' => '2014-02-20T16:30',
-            'allDay' => false
-        );
-
-        $events[] = array(
-            'id' => 99,
-            'title' => 'Contidioning',
-            'start' => '2014-02-25T15:30',
-            'end' => '2014-02-25T16:30',
-            'allDay' => false
-        );
-        $events[] = array(
-            'id' => 99,
-            'title' => 'Contidioning',
-            'start' => '2014-02-26T15:30',
-            'end' => '2014-02-26T16:30',
-            'allDay' => false
-        );
-        $events[] = array(
-            'id' => 99,
-            'title' => 'Kick Boxing',
-            'start' => '2014-02-27T15:30',
-            'end' => '2014-02-27T16:30',
-            'allDay' => false
-        );
         $this->response($events);
     }
 

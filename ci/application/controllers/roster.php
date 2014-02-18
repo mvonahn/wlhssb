@@ -17,16 +17,17 @@ class Roster extends REST_Controller
 
         $roster = $this->Roster_model->getRoster($team);
 
-        $this->response($roster);
+        exit(json_encode($roster,JSON_NUMERIC_CHECK));
+       // $this->response($roster);
     }
 
     public function varsity_get()
     {
-        $this->index_get('varsity');
+        $this->index_get(1);
     }
 
     public function jv_get()
     {
-        $this->index_get('jv');
+        $this->index_get(2);
     }
 }
