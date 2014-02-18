@@ -8,37 +8,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default navbar-static-top" role="navigation" data-ng-controller="NavController">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">West Linn High School Softball</a>
-        </div>
-        <div class="navbar-collapse collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav">
-                <li ng-class="{ active: isActive('/home')}"><a href="#">Home</a></li>
-                <li ng-class="{ active: isActive('/calendar')}"><a href="#/calendar">Calendar</a></li>
-                <li class="dropdown" ng-class="{ active: isActive('/team/jv') || isActive('/team/varsity') }">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Teams <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#/team/jv">JV</a></li>
-                        <li><a href="#/team/varsity">Varsity</a></li>
-                    </ul>
-                </li>
-                <li ng-class="{ active: isActive('/media')}"><a href="#/media">Photos</a></li>
-                <li ng-class="{ active: isActive('/philosophy')}"><a href="#/philosophy">Coaching Philosophy</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="#">Welcome!</a></li>
-            </ul>
-        </div><!--/.nav-collapse -->
-    </div>
-</nav>
+<nav-bar></nav-bar>
 
 <div class="container">
     <div class="row">
@@ -46,37 +16,9 @@
             <div data-ng-view></div>
         </div>
         <div class="col-lg-3">
-
-            <div class="panel panel-success">
-                <!-- Default panel contents -->
-                <div class="panel-heading">Flash Store</div>
-                <div class="panel-body">
-                    <p>Flash store coming soon!</p>
-                </div>
-            </div>
-
-            <div class="panel panel-success">
-                <!-- Default panel contents -->
-                <div class="panel-heading">Upcoming Events</div>
-                <div class="panel-body" data-ng-controller="UpcomingEventController">
-                    <ul ng-repeat="event in upcomingEvents">
-                        <li>{{toDate(event.date) | date : 'EEE MMM dd h:mm a'}}<br />{{event.title}}</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="panel panel-success">
-                <div class="panel-heading">Images</div>
-                <div class="panel-body" >
-                    <div ng-controller="MediaController">
-                        <carousel interval="myInterval">
-                            <slide ng-repeat="slide in slides" active="slide.active">
-                                <img ng-src="{{slide.image}}" style="margin:auto;">
-                            </slide>
-                        </carousel>
-                    </div>
-                </div>
-            </div>
-
+            <flash-store></flash-store>
+            <upcoming-events></upcoming-events>
+            <side-bar-images></side-bar-images>
         </div>
     </div>
   <div>West Linn HS Softball: v<span data-app-version></span></div>

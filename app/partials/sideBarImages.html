@@ -1,0 +1,12 @@
+<div class="panel panel-success">
+    <div class="panel-heading">Images</div>
+    <div class="panel-body" >
+        <div ng-controller="MediaController">
+            <carousel interval="myInterval">
+                <slide ng-repeat="slide in slides" active="slide.active">
+                    <img ng-src="{{slide.image}}" style="margin:auto;">
+                </slide>
+            </carousel>
+        </div>
+    </div>
+</div>
