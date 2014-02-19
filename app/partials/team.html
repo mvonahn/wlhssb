@@ -31,7 +31,7 @@
                         <tr>
                             <td>{{ player.Number }}</td>
                             <td>{{ player.FirstName }} {{ player.LastName }}</td>
-                            <td>{{ player.position }}</td>
+                            <td class ="hidden-xs hidden-sm">{{ player.position }}</td>
                             <td>{{ player.year }}</td>
                         </tr>
                         </tbody>
@@ -54,10 +54,10 @@
                         <tbody ng-repeat="game in games | orderBy:sort.column:sort.descending">
                         <tr>
                             <td>{{ toDate(game.date) | date:'mediumDate'}}</td>
-                            <td>{{ toDate(game.date) | date:'EEE'}}</td>
+                            <td class ="hidden-xs hidden-sm">{{ toDate(game.date) | date:'EEE'}}</td>
                             <td>{{ game.opponent }}</td>
-                            <td>{{ game.location }}</td>
-                            <td>{{ toDate(game.date) | date:'shortTime'}}</td>
+                            <td class ="hidden-xs hidden-sm">{{ game.location }}</td>
+                            <td class ="hidden-xs">{{ toDate(game.date) | date:'shortTime'}}</td>
                         </tr>
                         </tbody>
                     </table>

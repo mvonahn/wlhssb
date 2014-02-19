@@ -43,7 +43,7 @@ EOSQL;
                 'title' => $row->Title,
                 'start' => $row->Start,
                 'end' => $row->End,
-                'allDay' => ($row->isAllDay),
+                'allDay' => ($row->isAllDay == 1),
                 'color' => $row->color
             );
         }
@@ -73,7 +73,7 @@ FROM
 WHERE
     TeamId = Team.Id
 ORDER by ts
-LIMIT 10
+LIMIT 5
 EOSQL;
 
         $query = $this->db->query($sql);

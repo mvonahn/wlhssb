@@ -66,7 +66,7 @@ angular.module('wlhssbApp.controllers', [])
         });
 
         $scope.toDate = function(dt) {
-            return Date.parse(dt);
+            return new Date(dt.replace(/-/g, "/"));
         };
 
         $scope.sort = {
@@ -126,32 +126,6 @@ angular.module('wlhssbApp.controllers', [])
         $scope.alertOnResize = function(event, dayDelta, minuteDelta, revertFunc, jsEvent, ui, view ){
             $scope.alertMessage = ('Event Resized to make dayDelta ' + minuteDelta);
         };
-        /* add and removes an event source of choice */
-        $scope.addRemoveEventSource = function(sources,source) {
-            var canAdd = 0;
-            angular.forEach(sources,function(value, key){
-                if(sources[key] === source){
-                    sources.splice(key,1);
-                    canAdd = 1;
-                }
-            });
-            if(canAdd === 0){
-                sources.push(source);
-            }
-        };
-        /* add custom event*/
-        $scope.addEvent = function() {
-            $scope.events.push({
-                title: 'Open Sesame',
-                start: new Date(y, m, 28),
-                end: new Date(y, m, 29),
-                className: ['openSesame']
-            });
-        };
-        /* remove event */
-        $scope.remove = function(index) {
-            $scope.events.splice(index,1);
-        };
         /* Change View */
         $scope.changeView = function(view,calendar) {
             calendar.fullCalendar('changeView',view);
@@ -163,9 +137,9 @@ angular.module('wlhssbApp.controllers', [])
         /* config object */
         $scope.uiConfig = {
             calendar:{
-                height: 450,
+                height: 800,
                 width: 800,
-                editable: true,
+                editable: false,
                 header:{
                     left: 'title',
                     center: '',
@@ -197,7 +171,7 @@ angular.module('wlhssbApp.controllers', [])
         });
 
         $scope.toDate = function(dt) {
-            return Date.parse(dt);
+            return new Date(dt.replace(/-/g, "/"));
         };
     })
     .controller('MediaController', function($scope, $location, $routeParams) {
@@ -210,7 +184,7 @@ angular.module('wlhssbApp.controllers', [])
                 image: '/files/fallCamp2013/thumbnails/' + index + '.jpg'
             });
         };
-        for (var i=1; i<62; i++) {
+        for (var i=1; i<20; i++) {
             $scope.addSlide(i);
         }
     });
