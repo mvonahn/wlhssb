@@ -86,17 +86,8 @@ angular.module('wlhssbApp.controllers', [])
         };
     })
     .controller('CalendarController', function($scope, $http, $modal, $log) {
-/**
-        $http.get('/ws/events').success(function(response) {
-            $scope.events = response;
-        });
-*/
-        console.log('Calendar');
-        var date = new Date();
-        var d = date.getDate();
-        var m = date.getMonth();
-        var y = date.getFullYear();
 
+        console.log('Calendar');
 
         $scope.teamEvents = {
             color: '#f05800',
@@ -137,7 +128,7 @@ angular.module('wlhssbApp.controllers', [])
         /* config object */
         $scope.uiConfig = {
             calendar:{
-                height: 800,
+                height: 600,
                 width: 800,
                 editable: false,
                 header:{
@@ -145,9 +136,7 @@ angular.module('wlhssbApp.controllers', [])
                     center: '',
                     right: 'today prev,next'
                 },
-                eventClick: $scope.alertOnEventClick,
-                eventDrop: $scope.alertOnDrop,
-                eventResize: $scope.alertOnResize
+                eventClick: $scope.alertOnEventClick
             }
         };
 
