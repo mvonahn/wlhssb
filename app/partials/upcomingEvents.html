@@ -2,8 +2,11 @@
     <!-- Default panel contents -->
     <div class="panel-heading">Upcoming Events</div>
     <div class="panel-body" data-ng-controller="UpcomingEventController">
-        <ul ng-repeat="event in upcomingEvents">
-            <li>{{toDate(event.date) | date : 'EEE MMM dd h:mm a'}}<br />{{event.title}}</li>
-        </ul>
+        <span class ="list-group" ng-repeat="event in upcomingEvents">
+            <div class="list-group-item">
+                <h6 class="list-group-item-heading"> {{toDate(event.date) | date : 'EEE MMM dd h:mm a'}}</h6>
+                <p class="list-group-item-text">{{event.title}}</p>
+            </div>
+        </span>
     </div>
 </div>

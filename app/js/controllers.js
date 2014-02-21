@@ -3,7 +3,7 @@
 /* Controllers */
 
 angular.module('wlhssbApp.controllers', [])
-    .controller('MyCtrl1', function($scope, $http, $modal, $log) {
+    .controller('MyCtrl1', function($scope, $http, dates, $modal, $log) {
 
         console.log('Main Controller');
 
@@ -11,30 +11,7 @@ angular.module('wlhssbApp.controllers', [])
         $scope.posts = response;
     });
 
-    $scope.convertToUTC = function(dt) {
-        var localDate = new Date(dt);
-        var localTime = localDate.getTime();
-        var localOffset = localDate.getTimezoneOffset() * 60000;
-        return new Date(localTime + localOffset);
-    };
-
-    $scope.format = 'yyyy/MM/dd';
-    $scope.today = function() {
-        $scope.dt = new Date();
-    };
-    $scope.today();
-
-    $scope.showWeeks = false;
-
-    $scope.clear = function () {
-        $scope.dt = null;
-    };
-
-    $scope.dateOptions = {
-        'year-format': "'yy'",
-        'starting-day': 1,
-        'show-weeks' : false
-    };
+    $scope.convertToUTC = dates.convertToUTC;
 
     })
     .controller('RosterController', function($scope, $http, $modal, $log, $routeParams) {
@@ -59,15 +36,13 @@ angular.module('wlhssbApp.controllers', [])
             }
         };
     })
-    .controller('GameController', function($scope, $http, $modal, $routeParams) {
+    .controller('GameController', function($scope, $http, $modal, $routeParams, dates) {
 
         $http.get('/ws/game/' + $routeParams.team ).success(function(response) {
             $scope.games = response;
         });
 
-        $scope.toDate = function(dt) {
-            return new Date(dt.replace(/-/g, "/"));
-        };
+        $scope.toDate = dates.toDate;
 
         $scope.sort = {
             column: 'date',
@@ -135,8 +110,7 @@ angular.module('wlhssbApp.controllers', [])
                     left: 'title',
                     center: '',
                     right: 'today prev,next'
-                },
-                eventClick: $scope.alertOnEventClick
+                }
             }
         };
 
@@ -145,6 +119,7 @@ angular.module('wlhssbApp.controllers', [])
     })
     .controller('NavController', function($scope, $location) {
 
+        $scope.isCollapsed = true;
         $scope.isActive = function (viewLocation) {
             return (viewLocation === $location.path());
         };
@@ -154,14 +129,12 @@ angular.module('wlhssbApp.controllers', [])
             $scope.team = response;
         });
     })
-    .controller('UpcomingEventController', function($scope, $location, $http, $routeParams) {
+    .controller('UpcomingEventController', function($scope, $location, $http, dates) {
         $http.get('/ws/events/upcoming').success(function(response) {
             $scope.upcomingEvents = response;
         });
 
-        $scope.toDate = function(dt) {
-            return new Date(dt.replace(/-/g, "/"));
-        };
+        $scope.toDate = dates.toDate;
     })
     .controller('MediaController', function($scope, $location, $routeParams) {
         $scope.team =  $routeParams.team;
