@@ -18,5 +18,6 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/philosophy', {templateUrl: 'partials/philosophy.html', controller: 'MyCtrl1'});
   $routeProvider.when('/media', {templateUrl: 'partials/images.html', controller: 'MediaController'});
   $routeProvider.when('/team/:team', {templateUrl: 'partials/team.html', controller: 'TeamController'});
+  $routeProvider.when('/fundraising', {templateUrl: 'partials/Fundraising.html', controller: 'MyCtrl1'});
   $routeProvider.otherwise({redirectTo: '/home'});
 }]);
