@@ -22,10 +22,13 @@ class Team extends REST_Controller
 
     public function varsity_get()
     {
+        $this->load->model('Coach_model', '', true);
+
+        $coaches = $this->Coach_model->getCoaches('Varsity');
+
         $team = array(
           "name" => 'Varsity',
-           "coaches" => array('Head' => 'Scott Smith',
-           'Assistant' => 'Andy Schrank'),
+           "coaches" => $coaches,
             "wins" => '0 (0)',
             "losses" => '0 (0)'
         );
@@ -34,9 +37,14 @@ class Team extends REST_Controller
 
     public function jv_get()
     {
+
+        $this->load->model('Coach_model', '', true);
+
+        $coaches = $this->Coach_model->getCoaches('JV');
+
         $team = array(
             "name" => 'JV',
-            "coaches" => array('Head' => 'Angie Hemming'),
+            "coaches" => $coaches,
             "wins" => '0 (0)',
             "losses" => '0 (0)'
         );

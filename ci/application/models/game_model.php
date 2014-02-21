@@ -36,7 +36,9 @@ EOSQL;
                 'date' => $row->Scheduled,
                 'opponent' => $row->OpponentName,
                 'level' => $team,
-                'location' => $row->Location
+                'location' => $row->Location,
+                'isLeague' => $row->isLeague,
+                'isHome' => $row->isHome,
             );
         }
         return $games;

@@ -20,9 +20,14 @@ class Coach_model extends CI_Model
      * @param string $team
      * @return array
      */
-    public function getCoaches($team = 'Varsity')
+    public function getCoaches($team = null)
     {
         $games = array();
+
+        if ($team != null) {
+            $teamWhere = 'And Team.Name = "' . $team . '"';
+        }
+
         $sql =
 <<<EOSQL
 Select
@@ -38,6 +43,7 @@ WHERE
     TeamId = Team.Id
     AND PersonId = Person.Id
     AND CoachType.Id = CoachTypeId
+    $teamWhere
 ORDER BY
     TeamId, CoachTypeId, LastName;
 EOSQL;
