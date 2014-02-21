@@ -39,6 +39,7 @@ EOSQL;
                 'location' => $row->Location,
                 'isLeague' => $row->isLeague,
                 'isHome' => $row->isHome,
+                'comment' => $row->Comment,
             );
         }
         return $games;

@@ -12,8 +12,11 @@
     <tr>
         <td>{{ toDate(game.date) | date:'mediumDate'}}</td>
         <td class ="hidden-xs hidden-sm">{{ toDate(game.date) | date:'EEE'}}</td>
-        <td><span data-ng-show="game.isLeague == 1" class="label label-success pull-right">League</span>{{ game.opponent }}</td>
-        <td class ="hidden-xs hidden-sm">{{ game.location }}</td>
+        <td><span data-ng-show="game.isLeague == 1" class="label label-success pull-right">League</span>
+            <span data-ng-show="game.comment != null" class="label label-warning pull-right">{{game.comment}}</span>
+            {{ game.opponent }}</td>
+        <td class ="hidden-xs hidden-sm">{{ game.location }}
+            </td>
         <td class ="hidden-xs">{{ toDate(game.date) | date:'shortTime'}}</td>
     </tr>
     </tbody>
