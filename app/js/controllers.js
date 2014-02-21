@@ -136,6 +136,11 @@ angular.module('wlhssbApp.controllers', [])
 
         $scope.toDate = dates.toDate;
     })
+    .controller('UpcomingEventController', function($scope, $location, $http) {
+        $http.get('/ws/contact').success(function(response) {
+            $scope.contacts = response;
+        });
+    })
     .controller('MediaController', function($scope, $location, $routeParams) {
         $scope.team =  $routeParams.team;
 

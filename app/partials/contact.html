@@ -1,0 +1,22 @@
+<div class="panel panel-success">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Contact Information</div>
+    <div class="panel-body" data-ng-repeat="contact in contacts">
+        <div class="row">
+            <div class="col-lg-4">
+                <img ng-src = "{{contact.image}}" width = "200">
+            </div>
+            <div class="col-lg-8">
+                <div class="panel-success">
+                    <div class="page-header">{{contact.FirstName}} {{contact.LastName}}</div>
+                    <div class="panel-body">
+                        <b>{{contact.TeamName}} {{contact.Title}}</b><br />
+                        <span data-ng-show="contact.email != null">Email: {{contact.email}}<br /></span>
+                        <span data-ng-show="contact.phone != null">Phone: {{contact.phone}}<br /></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
