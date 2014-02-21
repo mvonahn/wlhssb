@@ -14,7 +14,7 @@ angular.module('wlhssbApp', [
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'MyCtrl1'});
   $routeProvider.when('/calendar', {templateUrl: 'partials/calendar.html', controller: 'CalendarController'});
-  $routeProvider.when('/contact', {templateUrl: 'partials/contact.html', controller: 'MyCtrl1'});
+  $routeProvider.when('/contact', {templateUrl: 'partials/contact.html', controller: 'ContactController'});
   $routeProvider.when('/philosophy', {templateUrl: 'partials/philosophy.html', controller: 'MyCtrl1'});
   $routeProvider.when('/media', {templateUrl: 'partials/images.html', controller: 'MediaController'});
   $routeProvider.when('/team/:team', {templateUrl: 'partials/team.html', controller: 'TeamController'});
