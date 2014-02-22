@@ -23,7 +23,7 @@ class Coach_model extends CI_Model
     public function getCoaches($team = null)
     {
         $games = array();
-
+        $teamWhere = '';
         if ($team != null) {
             $teamWhere = 'And Team.Name = "' . $team . '"';
         }
