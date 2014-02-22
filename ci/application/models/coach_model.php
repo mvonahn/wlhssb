@@ -45,7 +45,7 @@ WHERE
     AND CoachType.Id = CoachTypeId
     $teamWhere
 ORDER BY
-    TeamId, CoachTypeId, LastName;
+    TeamId, CoachTypeId, FirstName;
 EOSQL;
 
         $query = $this->db->query($sql);
