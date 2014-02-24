@@ -19,7 +19,7 @@ class Post_model extends CI_Model
     public function getPosts($limit = 5, $offset = 0)
     {
         $post = array();
-        $sql = 'Select * from Post order by Date Desc limit ' . $offset . ', ' . $limit;
+        $sql = 'Select * from Post order by KeepOnTop Desc, Date Desc limit ' . $offset . ', ' . $limit;
         $query = $this->db->query($sql);
         foreach ($query->result() as $row) {
             $post[] = $row;
