@@ -6,7 +6,7 @@
             <div class = "col-lg-4 col-xs-6">
                 <span class="list-group"  data-ng-repeat="coach in team.coaches">
                     <div class="list-group-item">
-                        {{coach.Title}}: {{coach.FirstName}} {{coach.LastName}}
+                        {{coach.Title}}: {{coach.FirstName}} {{coach.LastName}} <span class="badge" data-ng-click="openModal(coach)">i</span>
                     </div>
                 </span>
             </div>

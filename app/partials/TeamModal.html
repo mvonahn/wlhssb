@@ -1,0 +1,14 @@
+<div class="modal-header">
+    <button type="button" class="close" style = "margin-top: -8px;" data-dismiss="modal" ng-click="cancel()">&times;</button>
+</div>
+<div class="modal-body">
+    <div class="media">
+        <img class="media-object pull-left" ng-src = "{{person.image}}" width = "100">
+        <div class="media-body">
+            <h4 class="media-heading">{{person.FirstName}} {{person.LastName}}</h4>
+            <b>{{person.TeamName}} {{person.Title}}</b><br />
+            <span data-ng-show="person.email != null">Email: <a href = "mailto:{{person.email}}">{{person.email}}</a><br /></span>
+            <span data-ng-show="person.phone != null">Phone: {{person.phone}}<br /></span>
+        </div>
+    </div>
+</div>

@@ -124,10 +124,27 @@ angular.module('wlhssbApp.controllers', [])
             return (viewLocation === $location.path());
         };
     })
-    .controller('TeamController', function($scope, $location, $http, $routeParams) {
+    .controller('TeamController', function($scope, $location, $http, $routeParams, $modal, $log) {
         $http.get('/ws/team/' + $routeParams.team ).success(function(response) {
             $scope.team = response;
         });
+
+        $scope.openModal = function (person) {
+
+            console.log(person);
+            var modalInstance = $modal.open({
+                templateUrl: '/partials/TeamModal.html',
+                controller: ModalInstanceCtrl,
+                resolve: {
+                    person: function() {return person; }
+                }
+            });
+
+            modalInstance.result.then(function () {
+                $log.info('Modal dismissed at: ' + new Date());
+            });
+        };
+
     })
     .controller('UpcomingEventController', function($scope, $location, $http, dates) {
         $http.get('/ws/events/upcoming').success(function(response) {
@@ -155,3 +172,10 @@ angular.module('wlhssbApp.controllers', [])
             $scope.addSlide(i);
         }
     });
+var ModalInstanceCtrl = function ($scope, $modalInstance, person) {
+    $scope.person = person;
+    $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+    };
+
+};
