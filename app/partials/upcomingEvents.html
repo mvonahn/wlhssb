@@ -4,7 +4,7 @@
     <div class="panel-body" data-ng-controller="UpcomingEventController">
         <span class ="list-group" ng-repeat="event in upcomingEvents">
             <div class="list-group-item">
-                <h6 class="list-group-item-heading"> {{toDate(event.date) | date : 'EEE MMM dd h:mm a'}}</h6>
+                <h6 class="list-group-item-heading"> {{toDate(event.date) | date : 'EEE MMM dd h:mm a'}} - {{toDate(event.End) | date : 'h:mm a'}}</h6>
                 <p class="list-group-item-text">{{event.title}}</p>
             </div>
         </span>

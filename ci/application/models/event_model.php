@@ -58,7 +58,8 @@ EOSQL;
 <<<EOSQL
 SELECT
     Title,
-    Start as ts
+    Start as ts,
+    End
 FROM
     Event
 WHERE
@@ -66,7 +67,8 @@ WHERE
 Union All
 SELECT
     Concat(Team.Name, ' vs ', OpponentName, ' @', Location) as Title,
-    Scheduled as ts
+    Scheduled as ts,
+    DATE_ADD(Scheduled, INTERVAL 2 HOUR) as End
 FROM
     Game,
     Team
@@ -80,6 +82,7 @@ EOSQL;
         foreach ($query->result() as $row) {
             $events[] = array(
                 'date' => $row->ts,
+                'End' => $row->End,
                 'title' => $row->Title
             );
         }
