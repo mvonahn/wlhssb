@@ -6,6 +6,8 @@
         <th ng-click="changeSorting('opponent')" >Opponent</th>
         <th ng-click="changeSorting('location')" class ="hidden-xs hidden-sm">Location</th>
         <th class ="hidden-xs">Time</th>
+        <th class ="hidden-xs hidden-sm">Result</th>
+        <th class ="hidden-xs hidden-sm">Score</th>
     </tr>
     </thead>
     <tbody ng-repeat="game in games | orderBy:sort.column:sort.descending">
@@ -18,6 +20,10 @@
         <td class ="hidden-xs hidden-sm">{{ game.location }}
             </td>
         <td class ="hidden-xs">{{ toDate(game.date) | date:'shortTime'}}</td>
+        <td class ="hidden-xs hidden-sm">{{ game.location }}
+        </td>
+        <td class ="hidden-xs hidden-sm">{{ game.location }}
+        </td>
     </tr>
     </tbody>
 </table>

@@ -40,6 +40,8 @@ EOSQL;
                 'isLeague' => $row->isLeague,
                 'isHome' => $row->isHome,
                 'comment' => $row->Comment,
+                'result' => $row->Result,
+                'score' => $row->TeamScore . ' - ' . $row->OpponentScore,
             );
         }
         return $games;
