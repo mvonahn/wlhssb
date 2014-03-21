@@ -29,7 +29,7 @@ class Team extends REST_Controller
         $team = array(
           "name" => 'Varsity',
            "coaches" => $coaches,
-            "wins" => '0 (0)',
+            "wins" => '1 (0)',
             "losses" => '1 (0)'
         );
         $this->response($team);
@@ -45,7 +45,7 @@ class Team extends REST_Controller
         $team = array(
             "name" => 'JV',
             "coaches" => $coaches,
-            "wins" => '0 (0)',
+            "wins" => '1 (0)',
             "losses" => '1 (0)'
         );
         $this->response($team);
