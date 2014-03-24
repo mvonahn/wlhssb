@@ -74,6 +74,7 @@ FROM
     Team
 WHERE
     TeamId = Team.Id
+AND Scheduled >= Now()
 ORDER by ts
 LIMIT 5
 EOSQL;
