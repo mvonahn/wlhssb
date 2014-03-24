@@ -68,7 +68,7 @@ where TeamId = (Select Id from Team where Name = '$team')
 And result = '$type'
 EOSQL;
         if ($leagueOnly) {
-            $sql = "\n" . 'And isLeague = 1';
+            $sql .= "\n" . 'And isLeague = 1';
         }
 
         $query = $this->db->query($sql);

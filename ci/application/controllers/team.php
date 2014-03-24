@@ -34,13 +34,14 @@ class Team extends REST_Controller
 
     private function getTeamData($team)
     {
+
         $this->load->model('Coach_model', '', true);
 
         $coaches = $this->Coach_model->getCoaches($team);
 
         $this->load->model('Game_model', '', true);
 
-        $results = $this->Game_model->getResults($team);
+        $results = $this->Game_model->getRecord($team);
 
         $teamData = array(
             "name" => $team,
