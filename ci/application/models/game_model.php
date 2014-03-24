@@ -46,4 +46,33 @@ EOSQL;
         }
         return $games;
     }
+
+    public function getRecord($team = 'Varsity')
+    {
+        $record = array();
+
+        $record['wins'] = $this->getGameCount($team, 'W', false);
+        $record['losses'] = $this->getGameCount($team, 'L', false);
+        $record['leagueWins'] = $this->getGameCount($team, 'W', true);
+        $record['leagueLosses'] = $this->getGameCount($team, 'L', true);
+
+        return $record;
+    }
+
+    private function getGameCount($team, $type, $leagueOnly)
+    {
+        $sql =
+<<<EOSQL
+Select count(*) as gameCount from Game
+where TeamId = (Select Id from Team where Name = '$team')
+And result = '$type'
+EOSQL;
+        if ($leagueOnly) {
+            $sql = "\n" . 'And isLeague = 1';
+        }
+
+        $query = $this->db->query($sql);
+        $row = $query->row();
+        return  $row->gameCount;
+    }
 }

@@ -22,32 +22,32 @@ class Team extends REST_Controller
 
     public function varsity_get()
     {
-        $this->load->model('Coach_model', '', true);
-
-        $coaches = $this->Coach_model->getCoaches('Varsity');
-
-        $team = array(
-          "name" => 'Varsity',
-           "coaches" => $coaches,
-            "wins" => '1 (0)',
-            "losses" => '1 (0)'
-        );
+        $team = $this->getTeamData('Varsity');
         $this->response($team);
     }
 
     public function jv_get()
     {
-
-        $this->load->model('Coach_model', '', true);
-
-        $coaches = $this->Coach_model->getCoaches('JV');
-
-        $team = array(
-            "name" => 'JV',
-            "coaches" => $coaches,
-            "wins" => '1 (0)',
-            "losses" => '1 (0)'
-        );
+        $team = $this->getTeamData('JV');
         $this->response($team);
     }
+
+    private function getTeamData($team)
+    {
+        $this->load->model('Coach_model', '', true);
+
+        $coaches = $this->Coach_model->getCoaches($team);
+
+        $this->load->model('Game_model', '', true);
+
+        $results = $this->Game_model->getResults($team);
+
+        $teamData = array(
+            "name" => $team,
+            "coaches" => $coaches,
+            "results" => $results
+        );
+        return $teamData;
+    }
+
 }
